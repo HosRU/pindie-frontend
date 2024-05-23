@@ -1,0 +1,54 @@
+.footer {
+  background-color: black;
+  border-top: 4px solid white;
+  border-left: 14px solid white;
+  color: white;
+  padding: 0px 115px 0px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+  padding: 20px 0px;
+  width: 100%;
+  align-self: center;
+}
+
+.name {
+  font-family: "Rubic One", sans-serif;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+.copy {
+}
+
+.list {
+  display: flex;
+  border-left: 14px solid white;
+}
+
+.item {
+}
+
+.footer .link {
+  text-transform: uppercase;
+  font-weight: bold;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: 0;
+  border-right: 4px solid white;
+  color: white;
+  height: 100%;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.footer .link:hover {
+  background-color: #ffff00;
+  color: black;
+}
