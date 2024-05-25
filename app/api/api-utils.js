@@ -92,7 +92,7 @@ export const getMe = async (url, jwt) => {
 };
 
 export const setJWT = (jwt) => {
-  document.cookie = jwt;
+  document.cookie = `jwt=${jwt}`;
   localStorage.setItem("jwt", jwt);
 };
 
