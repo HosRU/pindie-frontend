@@ -92,14 +92,20 @@ export const getMe = async (url, jwt) => {
 };
 
 export const setJWT = (jwt) => {
+  document.cookie = jwt;
   localStorage.setItem("jwt", jwt);
 };
 
 export const getJWT = () => {
-  return localStorage.getItem("jwt");
+  if (document.cookie === "") {
+    return localStorage.getItem("jwt");
+  }
+  const jwt = document.cookie.split(";").find((item) => item.includes("jwt"));
+  return jwt ? jwt.split("=")[1] : null;
 };
 
 export const removeJWT = () => {
+  document.cookie = "jwt=;";
   localStorage.removeItem("jwt");
 };
 
@@ -115,7 +121,7 @@ export const vote = async (url, jwt, usersArray) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${jwt}`,
       },
-      body: JSON.stringify({ users_permissions_users: usersArray }),
+      body: JSON.stringify({ users: usersArray }),
     });
     if (response.status !== 200) {
       throw new Error("Ошибка голосования");
